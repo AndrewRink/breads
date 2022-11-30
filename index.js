@@ -5,6 +5,7 @@ const breadRoutes = require('./controllers/bread')
 
 const app = express()
 
+
 // MIDDLEWARE
 app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
@@ -13,11 +14,7 @@ app.engine('jsx', require('express-react-views').createEngine())
 app.use('/breads', breadRoutes)
 
 app.get('/', (req, res) => {
-    res.render('home')
-})
-
-app.get ('*', (req, res) => {
-    res.render('error404')
+    res.send('<h1>Hello!</h1>')
 })
 
 const PORT = process.env.PORT || 8080
