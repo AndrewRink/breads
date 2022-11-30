@@ -13,7 +13,7 @@ app.engine('jsx', require('express-react-views').createEngine())
 app.use('/breads', breadRoutes)
 
 app.get('/', (req, res) => {
-    res.send('<h1>Hello!</h1>')
+    res.render('home')
 })
 
 const PORT = process.env.PORT || 8080
