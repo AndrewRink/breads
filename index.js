@@ -5,6 +5,11 @@ const breadRoutes = require('./controllers/bread')
 
 const app = express()
 
+// MIDDLEWARE
+app.set('views', __dirname + '/views')
+app.set('view engine', 'jsx')
+app.engine('jsx', require('express-react-views').createEngine())
+
 app.use('/breads', breadRoutes)
 
 app.get('/', (req, res) => {
