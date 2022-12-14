@@ -4,6 +4,7 @@ const methodOverride = require('method-override')
 require('dotenv').config()
 
 const breadRoutes = require('./controllers/bread')
+const bakerRoutes = require('./controllers/baker')
 
 
 //intialize
@@ -19,6 +20,7 @@ app.engine('jsx', require('express-react-views').createEngine())
 
 //routes
 app.use('/breads', breadRoutes)
+app.use('/baker', bakerRoutes)
 
 mongoose.set('strictQuery', true);
 //connect to database
